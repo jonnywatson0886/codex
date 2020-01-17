@@ -14,6 +14,6 @@ namespace API1
     /// </summary>
     public partial class App : Application
     {
-        APIHelper
+       
     }
 }

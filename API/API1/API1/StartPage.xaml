@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         FontFamily="Century Gothic"
         FontSize="18"
+        Loaded="Window_Loaded"
         Title="API DEMO" Height="600" Width="600">
     <Grid>
         <!--#Region col/row def-->
@@ -32,6 +33,7 @@
             MaxHeight="100"
             MaxWidth="150"
             Content="Next"
+            Click="NextBut_Click"
          />
         <Button
             Name="NewPageBut"
@@ -39,7 +41,8 @@
             Grid.Row="1"
             MaxHeight="100"
             MaxWidth="150"
-            Content="New Page"
+            Content="Refresh Page"
+            Click="NewPageBut_Click"
          />
         <Button
             Name="LastPageBut"
@@ -48,6 +51,7 @@
             MaxHeight="100"
             MaxWidth="150"
             Content="Previous"
+            Click="LastPageBut_Click"
          />
         <!--#endregion-->
         <!--#region Image-->

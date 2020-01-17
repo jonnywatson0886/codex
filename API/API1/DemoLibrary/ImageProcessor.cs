@@ -9,8 +9,10 @@ namespace DemoLibrary
 {
     public class ImageProcessor
     {
-        public async Task LoadImage(int comicNumber = 0)
+        public static async Task<ImageModel> LoadImage(int comicNumber = 0)
         {
+            ImageModel DownloadedImage = new ImageModel();
+            //url for the connection for the connection to the website api
             string url = "";
             if (comicNumber > 0)
             {
@@ -20,10 +22,17 @@ namespace DemoLibrary
             {
                 url = "https://xkcd.com/info.0.json";
             }
-
             using (HttpResponseMessage response = await APIHelper.APIClient.GetAsync(url))
             {
-            
+                if (response.IsSuccessStatusCode)
+                {
+                    DownloadedImage = await response.Content.ReadAsAsync<ImageModel>();
+                    return DownloadedImage;
+                }
+                else 
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
             }
         }
     }
