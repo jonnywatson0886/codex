@@ -47,9 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="APIHelper.cs" />
-    <Compile Include="ImageModel.cs" />
-    <Compile Include="ImageProcessor.cs" />
+    <Compile Include="APIProcessing\SchoolChecklistProcessor.cs" />
+    <Compile Include="DataModels\CheckListDataModel.cs" />
+    <Compile Include="OtherStaticClasses\APIHelper.cs" />
+    <Compile Include="DataModels\ImageModel.cs" />
+    <Compile Include="APIProcessing\ImageProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

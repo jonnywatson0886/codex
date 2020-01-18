@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DemoLibrary
 {
-    public class ImageProcessor
+    public static class ImageProcessor
     {
         public static async Task<ImageModel> LoadImage(int comicNumber = 0)
         {

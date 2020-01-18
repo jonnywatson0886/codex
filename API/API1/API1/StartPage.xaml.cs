@@ -24,6 +24,7 @@ namespace API1
         #region vars
         private int maxNumber = 0;
         private int currentNumber = 0;
+        bool programRunning = false;
         #endregion
         #region constructor
         public StartPage()
@@ -78,13 +79,16 @@ namespace API1
         }
 
         /// <summary>
-        /// not yet used
+        ///create a new visual test page and delete the current page
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void NewPageBut_Click(object sender, RoutedEventArgs e)
         {
-
+            programRunning = true;
+            VisualProgrammingTest visualProgramming = new VisualProgrammingTest();
+            visualProgramming.Show();
+            this.Close();
         }
 
         /// <summary>
@@ -105,6 +109,14 @@ namespace API1
                 LastPageBut.IsEnabled = false;
             }
             NextBut.IsEnabled = true;
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            if (!programRunning)
+            {
+                Application.Current.Shutdown();   
+            }
         }
     }
 }

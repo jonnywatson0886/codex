@@ -5,11 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:API1"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="VisualProgrammingTest"
-        Height="600" Width="600">
+        Height="600" Width="600"
+        FontFamily="Century Gothic"
+        Closed="Window_Closed"
+        >
     <Grid>
         <!--#region col/rowdef-->
-            <Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -25,9 +29,62 @@
         </Grid.RowDefinitions>
         <!--#endregion-->
         <!--#region controls-->
-        <Button
-         Name="GetData"   
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="2"
+            Grid.RowSpan="3"
+            VerticalAlignment="Top"
+            >
+            <Button
+               Content="Return to Comics Page" 
+                Margin="5,10,5,200"
+                MinHeight="50"
+                MaxHeight="100"
+                Name="ComicsPageNavBut"
+                Click="ComicsPageNavBut_Click"
+                />
+            <Button
+         Name="GetDataBut"   
+         MaxHeight="100"
+         MinHeight="50"   
+         Margin="5"
+         Click="GetData_Click"
+         Content="Click To Get Data"
          />
+            <Button
+         Name="SortDataBut"   
+         MaxHeight="100"
+         MinHeight="50"   
+        Margin="5" 
+         Click ="SortDataBut_Click"  
+         Content="Click To Sort Data"
+         />
+            <Button
+         Name="OutputData"   
+         MaxHeight="100"
+         MinHeight="50"    
+         Margin="5"
+         Content="Click To output data"
+         />
+        </StackPanel>
+        <!--#endregion-->
+        <!--#region data Containers -->
+        <ListBox
+            Name="PossativeList"
+            Grid.Row="1"
+            Grid.Column="1"
+            BorderBrush="ForestGreen"
+            Grid.RowSpan="3"
+            Background="GhostWhite"
+            />
+        <ListBox
+            Name="NegativeList"
+            Grid.Row="1"
+            Grid.Column="3"
+            BorderBrush="DarkRed"
+            Grid.RowSpan="3"
+            Background="GhostWhite"
+            />
         <!--#endregion-->
     </Grid>
 </Window>
