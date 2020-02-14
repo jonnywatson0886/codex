@@ -82,7 +82,9 @@ namespace ExampleWebAPIone.Scripts
 		/// <returns>if successful or not </returns>
 		public bool AddPersonToPeople(CustomerDOO incommingPerson)
 		{
+			//create connection object(to be setup in config file in future)
 			SqlConnection connection = new SqlConnection(sb.ConnectionString);
+			//create blank sql command
 			SqlCommand cmd = new SqlCommand()
 			{ 
 			Connection = connection,
